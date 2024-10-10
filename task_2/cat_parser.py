@@ -15,9 +15,9 @@ def get_cats_info(path: str) -> list():
             for line in text:
                 if not line:
                     continue
-                id, name, age = line.strip().split(',')
+                id, name, age = line.strip().split(",")
                 cats.append({"id": id, "name": name, "age": age})
-        with open('cats.json', 'w', errors=None) as result:
+        with open("cats.json", "w", errors=None) as result:
             result.write(json.dumps(cats))
         return cats
     except FileNotFoundError:
